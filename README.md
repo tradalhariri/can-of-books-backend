@@ -117,3 +117,44 @@ Finish time:
 
 Actual time needed to complete: 
 2 hour
+
+
+
+### Lab 13
+
+
+Name of feature:
+1. Create: As a user, I'd like to add a new book to my shelf, so that I can keep my lists up to date with my latest books and recommendations.
+
+Estimate of time needed to complete:
+1 hour
+
+Start time: 
+3 PM
+
+Finish time: 
+
+4 PM
+
+Actual time needed to complete: 
+1 hour
+
+
+-----
+
+
+Name of feature:
+2. Delete: As a user, I want to remove books from my list, so that only the most important books are on my shelf.
+
+Estimate of time needed to complete:
+1 hour
+
+Start time: 
+04:30 PM
+
+Finish time: 
+
+05:30 PM
+
+Actual time needed to complete: 
+1 hour
