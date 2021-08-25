@@ -158,3 +158,23 @@ Finish time:
 
 Actual time needed to complete: 
 1 hour
+
+
+### lab 14
+
+Name of feature:
+1. Update: As a user, I want to update book details on my list, so that I can change the book status, or update the book details as I learn more about it.
+
+Estimate of time needed to complete:
+2 hour
+
+Start time: 
+02:30 PM
+
+Finish time: 
+
+05:30 PM
+
+Actual time needed to complete: 
+3 hours
+

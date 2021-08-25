@@ -19,6 +19,32 @@ function handleMainRoute(req,res){
 server.get('/books',getBooksByOwnerEmail);
 server.post('/books',addBookForOwnerEmail);
 server.delete('/books/:bookID',deleteBookForOwnerEmail);
+server.put('/books/:bookID',editBookForOwnerEmail);
+
+async function editBookForOwnerEmail(req, res) {
+    const {bookDescription,bookImageUrl,bookName} = req.body;
+    await bookModel.findOne({_id:req.params.bookID},(err,book)=>{
+        if(err){
+            res.status(500).send({message:err.message});
+        }
+        else{
+            book.title = bookName;
+            book.description = bookDescription;
+            book.image = bookImageUrl;
+            book.save().then(book=>{
+                bookModel.find({email:book.email},(err,bookData)=>{
+              
+                        res.status(200).send(bookData);
+                    
+                })
+            }).catch((err)=>{
+                res.status(500).send(err)
+            })
+    
+        }
+    });
+
+}
 
 async function deleteBookForOwnerEmail(req,res){
     const bookID = req.params.bookID;
@@ -67,3 +93,5 @@ function getBooksByOwnerEmail(req,res){
 
 
 server.listen(PORT, () => console.log(`Server listening ${PORT}`));
+
+// mongodb://<username>:admin-trad@cluster0-shard-00-00.7i932.mongodb.net:27017,cluster0-shard-00-01.7i932.mongodb.net:27017,cluster0-shard-00-02.7i932.mongodb.net:27017/books?ssl=true&replicaSet=atlas-ygzegn-shard-0&authSource=admin&retryWrites=true&w=majority

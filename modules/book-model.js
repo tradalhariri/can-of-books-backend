@@ -1,7 +1,7 @@
 'use strict';
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/bestbooks', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(`${process.env.MONGODB_URL}`, { useNewUrlParser: true, useUnifiedTopology: true });
 const bookSchema = new mongoose.Schema({
     title: String,
     description: String,
